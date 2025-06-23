@@ -39,3 +39,12 @@
 - **IQ-TREE:** para construir árboles filogenéticos (máxima verosimilitud).
 - **FigTree:** para visualizar y anotar los árboles.
 - **Atom o Nano:** para editar archivos y secuencias en texto plano.
+##Fotos
+
+![Lobo marino de Galápagos]https://datazone.darwinfoundation.org/images/checklist/dscn3722.jpg
+![Zalophus wollebaeki]https://datazone.darwinfoundation.org/images/checklist/cp_1194.jpg
+![Zalophus californianus]https://www.racerocks.ca/wp-content/uploads/2015/06/rm2010calsl.jpg
+![Otaria flavescens]https://ecoregistros.org/site/images/dataimages/2019/09/01/348207/Leao-marinho--Otaria-flavescens--macho-.jpg
+![Eumetopias jubatus]https://sealion-world.com/wp-content/uploads/Steller-Sea-Lion_624.jpg
+![Arctocephalus townsendi]https://zooinstitutes.com/img/animals/24/24234.jpg
+
