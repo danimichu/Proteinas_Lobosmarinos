@@ -1,6 +1,9 @@
 # Proyecto Bioinformático: Análisis de Genes Ortólogos en Otariidae
 
-## Q1. ¿En qué organismo o grupo de organismos vas a trabajar?
+## Autor: Daniela Centeno
+## Propósito del programa de tu proyecto
+##Objetivos
+## Organismo
 
 - Grupo: Mamíferos marinos de la familia **Otariidae**.
 - Géneros incluidos en el análisis:
@@ -60,9 +63,5 @@
 *Arctocephalus townsendi*
 
 
-![Otaria flavescens](https://ecoregistros.org/site/images/dataimages/2019/09/01/348207/Leao-marinho--Otaria-flavescens--macho-.jpg)
 
-![Eumetopias jubatus](https://sealion-world.com/wp-content/uploads/Steller-Sea-Lion_624.jpg)
-
-![Arctocephalus townsendi](https://zooinstitutes.com/img/animals/24/24234.jpg)
 
