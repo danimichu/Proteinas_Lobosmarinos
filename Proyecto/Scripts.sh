@@ -110,6 +110,6 @@ BEGIN { OFS="\t" }
 # Construir árbol filogenético con IQ-TREE
 module av iqtree
 module load iqtree/2.2.2.6
-
+iqtree -s alineado.fasta -m MFP -bb 1000 -nt AUTO
 
 
