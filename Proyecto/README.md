@@ -68,5 +68,54 @@ Se construirá un entorno bioinformático con Conda, y se recopilarán secuencia
 *Arctocephalus townsendi*
 
 
+## Lista de comandos
 
+* Descargar las secuencias desde NCBI
 
+```
+./datasets download gene symbol MB --ortholog Otariidae --filename MB_otariidae.zip
+./datasets download gene symbol UCP1 --ortholog Otariidae --filename UCP1_otariidae.zip
+./datasets download gene symbol SOD1 --ortholog Otariidae --filename SOD1_otariidae.zip
+./datasets download gene symbol CAT --ortholog Otariidae --filename CAT_otariidae.zip
+./datasets download gene symbol HIF1A --ortholog Otariidae --filename HIF1A_otariidae.zip
+./datasets download gene symbol COX4I1 --ortholog Otariidae --filename COX4I1_otariidae.zip
+./datasets download gene symbol PPARGC1A --ortholog Otariidae --filename PPARGC1A_otariidae.zip
+./datasets download gene symbol ATP5F1A --ortholog Otariidae --filename ATP5F1A_otariidae.zip
+
+```
+* Carga los módulos
+
+```
+module av blast
+module load blast+/2.11.0
+```
+* Lista de tus archivos fasta
+
+```
+PROTEINS=(
+  ATP5F1A_otariidae.fasta
+  CAT_otariidae.fasta
+  COX4I1_otariidae.fasta
+  GPX1_otariidae.fasta
+  HIF1A_otariidae.fasta
+  MB_otariidae.fasta
+  PPARGC1A_otariidae.fasta
+  SOD1_otariidae.fasta
+  UCP1_otariidae.fasta
+)
+```
+* Itera sobre cada archivo y ejecuta makeblastdb + blastp
+```
+for PROT in "${PROTEINS[@]}"; do
+  BASENAME="${PROT%.fasta}"
+  echo "Procesando $BASENAME..."
+```
+* Crear base de datos BLAST
+```
+  makeblastdb -in "$PROT" -dbtype prot -out "${BASENAME}_db" -parse_seqids -blastdb_version 4
+
+* Ejecutar BLASTp (contra sí mismo)
+  blastp -query "$PROT" -db "${BASENAME}_db" -out "${BASENAME}_blast.out" -outfmt 6
+done
+
+```
