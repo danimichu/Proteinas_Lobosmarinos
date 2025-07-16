@@ -68,8 +68,6 @@ Las secuencias obtenidas serán alineadas mediante **MUSCLE** para evaluar su co
 
 ## Fotos
 
-![Zalophus wollebaeki](https://datazone.darwinfoundation.org/images/checklist/cp_1194.jpg)  
-*Zalophus wollebaeki*
 
 ![Zalophus californianus](https://www.racerocks.ca/wp-content/uploads/2015/06/rm2010calsl.jpg)  
 *Zalophus californianus*
@@ -164,10 +162,14 @@ BEGIN { OFS="\t" }
 ```
 module av iqtree
 module load iqtree/2.2.2.6
+iqtree -s alineado.fasta -m MFP -bb 1000 -nt AUTO
+
 ```
 ## Arbol filogenético obtenido de secuencias protéicas
+<img width="1384" height="705" alt="alineado fasta treefile pdf" src="https://github.com/user-attachments/assets/4515dd5f-d24d-4b2f-a1ac-8f1c30506f7e" />
 
 ## Análisis
+El árbol filogenético generado a partir de secuencias génicas de tres especies de otáridos (Callorhinus ursinus, Zalophus californianus y Eumetopias jubatus) revela patrones de conservación y divergencia molecular entre distintos genes mitocondriales y nucleares relacionados con el metabolismo y el estrés oxidativo. Se observa un clado bien definido que agrupa a las secuencias del gen ATP5F1A, altamente conservado entre las tres especies, lo que sugiere una fuerte presión selectiva sobre esta subunidad de la ATP sintasa. En contraste, genes como PPARGC1A, HIF1A y UCP1 muestran múltiples copias por especie, reflejando eventos de duplicación génica o la existencia de isoformas parálogas. La organización del árbol muestra que la similitud entre secuencias está más determinada por la identidad génica que por la especie de origen, indicando que se trata de una filogenia génica. Los colores de las ramas permiten visualizar la agrupación de genes relacionados funcionalmente, y la escala de distancias genéticas confirma una mayor divergencia en genes asociados a la regulación adaptativa, como HIF1A y PPARGC1A, frente a los genes estructurales más conservados. Este análisis apoya la idea de que ciertas rutas metabólicas han sido objeto de adaptación específica en estos mamíferos marinos, posiblemente vinculada a su estilo de vida buceador y tolerancia a la hipoxia.
 
 ## Referencias:
 
