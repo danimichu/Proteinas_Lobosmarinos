@@ -165,3 +165,12 @@ BEGIN { OFS="\t" }
 module av iqtree
 module load iqtree/2.2.2.6
 ```
+## Arbol filogenético obtenido de secuencias protéicas
+
+## Análisis
+
+## Referencias:
+
+Yépez, Y., Marcano-Ruiz, M., & Bortolini, M. C. (2023). Adaptive strategies of aquatic mammals: Exploring the role of the HIF pathway and hypoxia tolerance. *Genetics And Molecular Biology*, 46(3 Suppl 1). https://doi.org/10.1590/1678-4685-gmb-2023-0140
+
+Wang, Q., Luo, C., Xu, X., Hu, W., Gai, Y., Gong, Y., & Mu, Y. (2024). Adaptive evolution of antioxidase-related genes in hypoxia-tolerant mammals. *Frontiers in Genetics*, 15. https://doi.org/10.3389/fgene.2024.1315677
