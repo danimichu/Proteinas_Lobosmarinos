@@ -108,6 +108,8 @@ BEGIN { OFS="\t" }
 }' aligned_.fasta > alineado.fasta
 
 # Construir árbol filogenético con IQ-TREE
+module av iqtree
+module load iqtree/2.2.2.6
 
 
 
