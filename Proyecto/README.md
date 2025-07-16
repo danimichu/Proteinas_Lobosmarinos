@@ -29,7 +29,6 @@ Las proteínas que se analizarán están relacionadas con:
   - Arctocephalus
   - Eumetopias
   - Callorhinus
-  - Otaria
 - Foco especial: *Zalophus wollebaeki* (lobo marino de Galápagos), especie endémica de alto interés ecológico y evolutivo.
 ---
 ## Metodología
@@ -117,5 +116,30 @@ for PROT in "${PROTEINS[@]}"; do
 * Ejecutar BLASTp (contra sí mismo)
   blastp -query "$PROT" -db "${BASENAME}_db" -out "${BASENAME}_blast.out" -outfmt 6
 done
+
+```
+* Alinear las secuencias con MUSCLE
+```
+cat *.fasta > combinado.fasta
+./muscle3.8.31_i86linux64 -in combinado.fasta -out aligned_.fasta
+```
+* Limpiar y dar formato a todos los encabezados en terminal
+```
+awk '
+BEGIN { OFS="\t" }
+{
+    if ($0 ~ /^>/) {
+        match($0, /[A-Z0-9\-]+/, gen);
+        match($0, /\[organism=[^]]+\]/);
+        org = substr($0, RSTART+10, RLENGTH-11);
+        gsub(" ", "_", org);
+        clave = gen[0] "_" org;
+        contador[clave]++;
+        iso = "X" contador[clave];
+        print ">" gen[0] "_" iso "_" org;
+    } else {
+        print $0
+    }
+}' aligned_.fasta > alineado.fasta
 
 ```
