@@ -86,11 +86,21 @@ done
 
 
 # Alinear las secuencias con MUSCLE
-echo "Realizando alineamiento con MUSCLE..."
-muscle -in ../Data/MB.fasta -out ../Results/MB_aligned.fasta
+cat *.fasta > combinado.fasta
+./muscle3.8.31_i86linux64 -in combinado.fasta -out aligned_.fasta
+
+#Limpiar y dar formato a todos los encabezados en terminal
+awk '/^>/ {
+    match($0, /ATP5F1A/); gen=substr($0, RSTART, RLENGTH);
+    match($0, /\[organism=[^]]+\]/); org=substr($0, RSTART+10, RLENGTH-11);
+    gsub(" ", "_", org);
+    print ">" gen "_" org
+    next
+} !/^>/ { print }' alingned_.fasta > alineado.fasta
 
 # Construir árbol filogenético con IQ-TREE
 echo "Construyendo árbol con IQ-TREE..."
 iqtree -s ../Results/MB_aligned.fasta -m MFP -bb 1000 -nt AUTO -pre ../Results/MB_tree
 
 echo "Análisis completo. Archivos generados en la carpeta Results/"
+#
