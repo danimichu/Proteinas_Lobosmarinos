@@ -90,17 +90,24 @@ cat *.fasta > combinado.fasta
 ./muscle3.8.31_i86linux64 -in combinado.fasta -out aligned_.fasta
 
 #Limpiar y dar formato a todos los encabezados en terminal
-awk '/^>/ {
-    match($0, /ATP5F1A/); gen=substr($0, RSTART, RLENGTH);
-    match($0, /\[organism=[^]]+\]/); org=substr($0, RSTART+10, RLENGTH-11);
-    gsub(" ", "_", org);
-    print ">" gen "_" org
-    next
-} !/^>/ { print }' alingned_.fasta > alineado.fasta
+awk '
+BEGIN { OFS="\t" }
+{
+    if ($0 ~ /^>/) {
+        match($0, /[A-Z0-9\-]+/, gen);
+        match($0, /\[organism=[^]]+\]/);
+        org = substr($0, RSTART+10, RLENGTH-11);
+        gsub(" ", "_", org);
+        clave = gen[0] "_" org;
+        contador[clave]++;
+        iso = "X" contador[clave];
+        print ">" gen[0] "_" iso "_" org;
+    } else {
+        print $0
+    }
+}' aligned_.fasta > alineado.fasta
 
 # Construir árbol filogenético con IQ-TREE
-echo "Construyendo árbol con IQ-TREE..."
-iqtree -s ../Results/MB_aligned.fasta -m MFP -bb 1000 -nt AUTO -pre ../Results/MB_tree
 
-echo "Análisis completo. Archivos generados en la carpeta Results/"
-#
+
+
