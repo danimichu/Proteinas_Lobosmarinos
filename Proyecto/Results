@@ -543,8 +543,6 @@ XP_073747325.1  XP_027455134.1  26.816  179     125     2       26      204     
 * Alineamiento de secuencias
 
 
-Aquí están tus secuencias alineadas con los títulos modificados según el formato solicitado:
-
 ```
 >ATP5F1A_Zalophus_californianus
 ------------------------------------------------------------
@@ -992,3 +990,5 @@ AQKPDVLTTGAGNPVGDKLN------------VMTAGPRGPLLVQD----VVFTDEMAHF
 DRERIPERVVHAKGAGAFGYFEVTHDITRYSKAKVFEHIGKRTPIAVRFSTVAGESGSAD
 TVRDPRGFAVKFYTEDGNWDLVGNN----------TPIFFVRDPIL------------FP
 SFIHSQKRNPQTHLRDP
+
+* Árbol Filogenético
